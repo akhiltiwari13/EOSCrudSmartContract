@@ -1,9 +1,9 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu Jan 10 19:38:03 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Jan 11 19:09:17 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
-            "name": "erase",
+            "name": "removetx",
             "base": "",
             "fields": [
                 {
@@ -35,6 +35,44 @@
             ]
         },
         {
+            "name": "transactionln",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transactionln_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "tstmp",
+                    "type": "uint64"
+                },
+                {
+                    "name": "icecat_id",
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "type": "string"
+                },
+                {
+                    "name": "item_quantity",
+                    "type": "uint16"
+                },
+                {
+                    "name": "item_description",
+                    "type": "string"
+                },
+                {
+                    "name": "vat",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
             "name": "writetx",
             "base": "",
             "fields": [
@@ -53,14 +91,6 @@
                 {
                     "name": "currency",
                     "type": "string"
-                },
-                {
-                    "name": "city",
-                    "type": "string"
-                },
-                {
-                    "name": "state",
-                    "type": "string"
                 }
             ]
         }
@@ -68,8 +98,8 @@
     "types": [],
     "actions": [
         {
-            "name": "erase",
-            "type": "erase",
+            "name": "removetx",
+            "type": "removetx",
             "ricardian_contract": ""
         },
         {
@@ -80,7 +110,14 @@
     ],
     "tables": [
         {
-            "name": "transactions",
+            "name": "trxlns",
+            "type": "transactionln",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "trxs",
             "type": "transaction",
             "index_type": "i64",
             "key_names": [],
