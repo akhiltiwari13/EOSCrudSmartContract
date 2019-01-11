@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Jan 11 19:09:17 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Jan 11 19:14:04 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -93,6 +93,44 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "name": "writetxln",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transactionln_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "tstmp",
+                    "type": "uint64"
+                },
+                {
+                    "name": "icecat_id",
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "type": "string"
+                },
+                {
+                    "name": "item_quantity",
+                    "type": "uint16"
+                },
+                {
+                    "name": "item_description",
+                    "type": "string"
+                },
+                {
+                    "name": "vat",
+                    "type": "uint16"
+                }
+            ]
         }
     ],
     "types": [],
@@ -105,6 +143,11 @@
         {
             "name": "writetx",
             "type": "writetx",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "writetxln",
+            "type": "writetxln",
             "ricardian_contract": ""
         }
     ],

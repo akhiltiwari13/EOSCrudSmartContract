@@ -42,6 +42,46 @@ public:
     transactions.erase(iterator);
   }
 
+  [[eosio::action]]
+void writetxln( uint64_t transactionln_id,
+    uint64_t transaction_id,
+    uint64_t tstmp,
+    std::string icecat_id,
+    std::string value,
+    uint16_t item_quantity,
+    std::string item_description,
+    uint16_t vat){
+    print("inside removetxln");
+    require_auth( _self );
+    transactionln_index trxlns(_code, _code.value);
+    auto iterator = trxlns.find(transactionln_id);
+     if( iterator == trxlns.end()){
+      trxlns.emplace(_self, [&]( auto& row ) {
+       row.transactionln_id = transactionln_id;
+       row.transaction_id = transaction_id;
+       row.tstmp = tstmp;
+       row.icecat_id = icecat_id;
+       row.value = value;
+       row.item_quantity=item_quantity;
+       row.item_description=item_description;
+       row.vat=vat;
+      });
+     }
+    else{
+       trxlns.modify(iterator, _self, [&]( auto& row ) {
+       row.transactionln_id = transactionln_id;
+       row.transaction_id = transaction_id;
+       row.tstmp = tstmp;
+       row.icecat_id = icecat_id;
+       row.value = value;
+       row.item_quantity=item_quantity;
+       row.item_description=item_description;
+       row.vat=vat;
+      });
+    }
+
+    }
+
 private:
   struct [[eosio::table]] transaction {
     uint64_t transaction_id;
@@ -69,7 +109,7 @@ private:
 
 };
 
-EOSIO_DISPATCH( icury, (writetx)(removetx))
+EOSIO_DISPATCH( icury, (writetx)(removetx)(writetxln))
 
       
     
