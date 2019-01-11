@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Jan 11 19:14:04 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Jan 11 19:16:20 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -8,6 +8,16 @@
             "fields": [
                 {
                     "name": "transaction_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "removetxln",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transactionln_id",
                     "type": "uint64"
                 }
             ]
@@ -138,6 +148,11 @@
         {
             "name": "removetx",
             "type": "removetx",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "removetxln",
+            "type": "removetxln",
             "ricardian_contract": ""
         },
         {

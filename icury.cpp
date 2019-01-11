@@ -82,6 +82,18 @@ void writetxln( uint64_t transactionln_id,
 
     }
 
+     [[eosio::action]]
+  void removetxln(uint64_t transactionln_id) {
+    require_auth(_self);
+    print("inside removetxln");
+    // require_auth(transaction_id);
+    transactionln_index trxlns(_self, _code.value);
+    auto iterator = trxlns.find(transactionln_id);
+    eosio_assert(iterator != trxlns.end(), "Record does not exist");
+    trxlns.erase(iterator);
+  }
+
+
 private:
   struct [[eosio::table]] transaction {
     uint64_t transaction_id;
@@ -109,7 +121,7 @@ private:
 
 };
 
-EOSIO_DISPATCH( icury, (writetx)(removetx)(writetxln))
+EOSIO_DISPATCH( icury, (writetx)(removetx)(writetxln)(removetxln))
 
       
     
