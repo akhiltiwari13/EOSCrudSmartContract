@@ -1,0 +1,188 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Tue Jan 15 17:42:32 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "removetx",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "removetxln",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transactionln_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "transaction",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "icecat_userid_from",
+                    "type": "string"
+                },
+                {
+                    "name": "icecat_userid_to",
+                    "type": "string"
+                },
+                {
+                    "name": "currency",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transactionln",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transactionln_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "tstmp",
+                    "type": "uint64"
+                },
+                {
+                    "name": "icecat_id",
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "type": "string"
+                },
+                {
+                    "name": "item_quantity",
+                    "type": "uint16"
+                },
+                {
+                    "name": "item_description",
+                    "type": "string"
+                },
+                {
+                    "name": "vat",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "writetx",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "icecat_userid_from",
+                    "type": "string"
+                },
+                {
+                    "name": "icecat_userid_to",
+                    "type": "string"
+                },
+                {
+                    "name": "currency",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "writetxln",
+            "base": "",
+            "fields": [
+                {
+                    "name": "transactionln_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "transaction_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "tstmp",
+                    "type": "uint64"
+                },
+                {
+                    "name": "icecat_id",
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "type": "string"
+                },
+                {
+                    "name": "item_quantity",
+                    "type": "uint16"
+                },
+                {
+                    "name": "item_description",
+                    "type": "string"
+                },
+                {
+                    "name": "vat",
+                    "type": "uint16"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "removetx",
+            "type": "removetx",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "removetxln",
+            "type": "removetxln",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "writetx",
+            "type": "writetx",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "writetxln",
+            "type": "writetxln",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "trxlns",
+            "type": "transactionln",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "trxs",
+            "type": "transaction",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}
