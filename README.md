@@ -3,8 +3,8 @@
 ## Introduction
 This is an EOSIO contract to read, write and modify transaction related data for icecat.The primary purpose of this contract is: 
 1. Writing transaction and transaction_line data in their coressponding multi_index_containers.
-2. Deleting the 
-2. Getting the multi_index_container data.
+2. Deleting the transaction and transactionLine data.
+3. Getting the multi_index_container data.
 
 This readme guides you through two processes:-
 
@@ -22,7 +22,9 @@ This readme guides you through two processes:-
 # Setup step
 
 - cleos wallet list
+- curl http://51.254.99.43:8888/v1/chain/get_info
 - curl http://localhost:8888/v1/chain/get_info
+
 
 - cleos wallet create --to-console
 ```Creating wallet: default
@@ -67,6 +69,8 @@ imported private key for: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 
 - #### Never use the development key for a production account! Doing so will most certainly result in the loss of access to your account, this private key is publicly known.####
 
+- ##### Compiling the contract to .wasm #####
+- eosio-cpp -o icury.wasm icury.cpp --abigen
 
 ```
 rehan@vps433578:~/eosio_home$ cleos create account eosio icury EOS8kJJjEV27b6MZW9n6toS3sTCE8mw9wULnF7J5PvKBn1uDuViFH
@@ -92,13 +96,6 @@ warning: transaction executed locally, but may not be confirmed by the network y
 warning: transaction executed locally, but may not be confirmed by the network yet         ] 
 ```
 - ##### do note that you are using the required authority as specified in the contract #####
-
-- Created new private key with a public key of: "EOS5Y1FetisMMPbutRJYXZXgXkm6mSxfXZJQBJeosDKuFbjoionH7"
-
-- cleos create account eosio icury EOS5Y1FetisMMPbutRJYXZXgXkm6mSxfXZJQBJeosDKuFbjoionH7EOS5Y1FetisMMPbutRJYXZXgXkm6mSxfXZJQBJeosDKuFbjoionH7 -p eosio@active
-
-- ##### Compiling the contract to .wasm #####
-- eosio-cpp -o icury.wasm icury.cpp --abigen
 
 - cleos set contract icury /home/rails/files/projects/contracts/icury/ -p icury@active
 
